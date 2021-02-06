@@ -6,7 +6,14 @@
             <a href="{{url('/')}}">Biography</a>
         </div>
         <div class="nav-icons n-flex">
-            <a href=""><i class="fas fa-user"></i></a>
+
+            @if(isset($_SESSION['online']))
+                <a href="{{ route('user.show', $_SESSION["name"] ) }}"><i class="fas fa-user"></i></a>
+                <a href="/disconnect">Déconnexion</a>
+            @else
+                <a href="{{ route('user.create') }}">S'inscrire</a>
+                <a>Se connecter</a>
+            @endif
         </div>
         
     </nav>
