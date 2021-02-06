@@ -12,10 +12,25 @@
         <!-- Styles -->
         <link rel="stylesheet" href="css/app.css?v=2">
 
+        {{-- Scripts --}}
+        <script src="https://kit.fontawesome.com/79d4761c9b.js" crossorigin="anonymous"></script>
     </head>
 
-    <x-header/>
     <body class="antialiased">
-       
+
+        <x-header/>
+
+       <section class="main-banner w100 n-flex n-center">
+            <h1>Louis D'Esposito</h1>
+       </section>
+       <section class="main-works w100 n-flex n-center">
+            <h1>Œuvres <i class="fas fa-arrow-right"></i></h1>
+        </section>
+        <section class="main-about w100 n-flex n-center">
+            <h1>Biographie <i class="fas fa-arrow-right"></i></h1>
+        </section>
+
+        <x-footer/>
+
     </body>
 </html>
