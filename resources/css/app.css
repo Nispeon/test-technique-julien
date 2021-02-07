@@ -31,6 +31,8 @@ a {
     width: 100%;
 }
 
+.h30 {height: 30vH;}
+
 
 /* Header */
 
@@ -82,4 +84,15 @@ a {
 
 .align-center {
     text-align: center;
+}
+
+
+/* About page */ 
+
+.slider-sec {
+    height: 30vH;
+}
+
+.slider-cont {
+    height: 30vH;
 }
