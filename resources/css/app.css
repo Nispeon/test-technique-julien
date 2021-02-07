@@ -31,14 +31,24 @@ a {
     width: 100%;
 }
 
-.h30 {height: 30vH;}
+.h30 {
+    height: 30vH;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-justify {
+    text-align: justify;
+}
 
 
 /* Header */
 
 .main-header {
     height: 10vH;
-    background-color: sienna;
+    background-color: #03396c;
 }
 
 
@@ -61,17 +71,17 @@ a {
 /* Landing page */
 
 .main-banner {
-    background-color: wheat;
+    background-color: #b3cde0;
     height: 50vH;
 }
 
 .main-works {
-    background-color: sandybrown;
+    background-color: 	#6497b1;
     height: 50vH;
 }
 
 .main-about {
-    background-color: wheat;
+    background-color: #b3cde0;
     height: 50vH;
 }
 
@@ -80,19 +90,45 @@ a {
 
 .main-footer {
     height: 10vH;
-}
+    background-color: #03396c;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
 
-.align-center {
-    text-align: center;
 }
 
 
 /* About page */ 
 
+.about-main {
+    background-color: #6497b1;
+}
+
 .slider-sec {
-    height: 30vH;
+    background-color: rgba(0, 0, 0, 0.349);
 }
 
 .slider-cont {
     height: 30vH;
+}
+
+.about-bio {
+    min-height: 50vH;
+    padding: 3vH 10%;
+    flex-direction: column;
+}
+
+.about-h1 {
+    align-self: flex-start;
+    font-size: 2em;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
+}
+
+.about-p {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
 }

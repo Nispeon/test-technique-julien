@@ -3,7 +3,7 @@
         <div class="n-flex n-center n-even">
             <a href="{{url('/')}}">Accueil</a>
             <a href="{{url('/')}}">Œuvres</a>
-            <a href="{{url('/')}}">Biography</a>
+            <a href="{{url('/about')}}">Biography</a>
         </div>
         <div class="nav-icons n-flex">
 
