@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -23,7 +25,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-
+        
     }
 
     public function create()
@@ -37,7 +39,7 @@ class UserController extends Controller
 
     public function edit($id)
     {
-
+        return view('user-edit');
     }
 
     public function connect()
@@ -50,7 +52,7 @@ class UserController extends Controller
 
     }
 
-    public function store(Request $req)
+    public function store(StoreUserRequest $req)
     {
 
         if ($req->password == $req->password_verif) {
@@ -84,9 +86,14 @@ class UserController extends Controller
         
     }
 
-    public function update($id)
+    public function update($id, UpdateUserRequest $req)
     {
-        
+        $user = User::findOrFail($id);
+        $user->update($req->all());
+
+        $_SESSION['name'] = $req->upname;
+
+        return redirect('/');
     }
 
     public function destroy($id)

@@ -8,7 +8,7 @@
         <div class="nav-icons n-flex">
 
             @if(isset($_SESSION['online']))
-                <a href="{{ route('user.show', $_SESSION["name"] ) }}"><i class="fas fa-user"></i></a>
+                <a href="{{ route('user.edit', $_SESSION["id"] ) }}"><i class="fas fa-user"></i></a>
                 <a href="/disconnect">Déconnexion</a>
             @else
                 <a href="{{ route('user.create') }}">S'inscrire</a>
