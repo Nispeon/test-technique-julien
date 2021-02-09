@@ -1,4 +1,4 @@
-@extends('layouts/head')
+@include('layouts/head')
 
     <body class="antialiased">
 

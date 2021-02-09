@@ -30,12 +30,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		focus      : 'center',
         type       : 'loop',
         perPage    : 3,
-		breakpoints : {
-			'600': {
-				// fixedWidth: 66,
-				// height    : 40,
-			}
-		},
 	} ).mount();
 
 
@@ -48,10 +42,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
         type       : 'loop',
         perPage    : 3,
         breakpoints : {
-			'865': {
+			'1040': {
 				perPage : 2,
 			},
-            '600': {
+            '660': {
                 perPage : 1,
             }
 		},
@@ -59,3 +53,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	primarySlider.sync( secondarySlider ).mount();
 } );
+
+
+// make cards clickable
+
+let cards = document.getElementsByClassName('work-card').length;
+
+for(let ey = 0; ey < cards; ey++ ) {
+
+    let thiss = document.getElementsByClassName('work-card')[ey];
+
+    thiss.addEventListener('click', function() {
+        window.location = thiss.getAttribute("href");
+    });
+}

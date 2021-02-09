@@ -7782,12 +7782,7 @@ document.addEventListener('DOMContentLoaded', function () {
     isNavigation: true,
     focus: 'center',
     type: 'loop',
-    perPage: 3,
-    breakpoints: {
-      '600': {// fixedWidth: 66,
-        // height    : 40,
-      }
-    }
+    perPage: 3
   }).mount();
   var primarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#image-slider', {
     pagination: false,
@@ -7797,16 +7792,29 @@ document.addEventListener('DOMContentLoaded', function () {
     type: 'loop',
     perPage: 3,
     breakpoints: {
-      '865': {
+      '1040': {
         perPage: 2
       },
-      '600': {
+      '660': {
         perPage: 1
       }
     }
   });
   primarySlider.sync(secondarySlider).mount();
-});
+}); // make cards clickable
+
+var cards = document.getElementsByClassName('work-card').length;
+
+var _loop = function _loop(ey) {
+  var thiss = document.getElementsByClassName('work-card')[ey];
+  thiss.addEventListener('click', function () {
+    window.location = thiss.getAttribute("href");
+  });
+};
+
+for (var ey = 0; ey < cards; ey++) {
+  _loop(ey);
+}
 
 /***/ }),
 

@@ -10,7 +10,7 @@
                 <ul class="splide__list">
                     @foreach($works as $work)
                     <li class="splide__slide">
-                        <div class="work-card">
+                        <div class="work-card" href="{{route('works.show', $work->id)}}">
                             <h2>{{$work->title}}</h2>
                             <img class="slider-cont" src="{{asset('/')}}img/works/{{$work->thumbnail}}">
                             <p>{{$work->release_date}}</p>
@@ -27,7 +27,6 @@
                     @foreach($works as $work2)
                     <li class="splide__slide">
                         <img class="slider-cont" src="{{asset('/')}}img/works/{{$work2->thumbnail}}">
-
                     </li>
                     @endforeach
                 </ul>

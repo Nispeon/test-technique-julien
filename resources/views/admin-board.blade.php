@@ -1,4 +1,4 @@
-@extends('layouts/head')
+@include('layouts/head')
     <body>
 
         <x-header/>
@@ -11,7 +11,9 @@
 
             <input type="file" name="thumbnail" placeholder="miniature">
 
-            <input type="text" name="description" placeholder="desc de l'oeuvre">
+            <textarea type="text" name="description" placeholder="desc de l'oeuvre"></textarea>
+
+            <textarea type="text" name="synopsis" placeholder="synopsis de l'oeuvre"></textarea>
 
             <input type="date" name="release_date" placeholder="date de sortie">
 
