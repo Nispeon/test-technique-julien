@@ -1,7 +1,7 @@
 <header class="main-header w100 n-flex n-center">
     <nav class="main-nav n-flex n-center n-between w100">
         <div class="nav-bars">
-            <i class="fas fa-bars"></i>
+            <i id="burger" class="fas fa-bars"></i>
         </div>
 
         <div id="resp" class="nav-2 w100 n-flex n-center n-between">

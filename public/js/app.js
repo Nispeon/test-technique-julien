@@ -7759,74 +7759,107 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
- // let width = window.innerWidth;
-// width.addEventListener('change', responav);
-// function responav(){
-//     var nav = document.getElementById('resp');
-//     if(width < 700) {
-//         console.log('ww');
-//         nav.className= "nav-2 w100 n-flex n-center n-between responsive";
-//     } else {
-//         nav.className= "nav-2 w100 n-flex n-center n-between";
-//     }
-// }
-// responav;
+ // FUNCTIONS FOR THE NAVBAR
+
+var nav = document.getElementById('resp');
+window.addEventListener('resize', responav);
+
+function responav() {
+  // change nav class depending on screen size
+  var width = window.innerWidth;
+
+  if (width < 700) {
+    nav.className = "nav-2 w100 n-flex n-center n-between responsive";
+    nav.style.display = 'none';
+  } else if (width >= 700) {
+    nav.className = "nav-2 w100 n-flex n-center n-between";
+    nav.style.display = 'flex'; // put nav in place if resizing upwards
+  }
+}
+
+responav();
+var navStyle = getComputedStyle(nav).getPropertyValue('display'); // get value of display style
+
+var burger = document.querySelector('#burger');
+
+function navshow() {
+  // hides or shows the nav links
+  var width = window.innerWidth;
+
+  if (navStyle != 'none' || nav.style.display == 'block') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'block';
+  }
+}
+
+burger.addEventListener('click', navshow); // attributing even to burger menu icon
+// SLIDERS
+
+/* These sliders were made using Splide library, chck their website for more info */
+// about page slider
 
 var element = document.getElementById('splide');
 
-if (typeof element != 'undefined' && element != null) {
-  new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splide', {
-    type: 'loop',
-    perPage: 1,
-    autoplay: true,
-    width: '100vw',
-    height: '30vh'
-  }).mount();
-} //works sliders
+if (typeof element != 'undefined' && element != null) // checking if we are on about page
+  {
+    new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splide', {
+      type: 'loop',
+      perPage: 1,
+      autoplay: true,
+      width: '100vw',
+      height: '30vh'
+    }).mount();
+  } // works page sliders
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  var secondarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#secondary-slider', {
-    fixedWidth: 100,
-    height: 60,
-    gap: 10,
-    cover: true,
-    isNavigation: true,
-    focus: 'center',
-    type: 'loop',
-    perPage: 3
-  }).mount();
-  var primarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#image-slider', {
-    pagination: false,
-    arrows: false,
-    cover: true,
-    focus: 'center',
-    type: 'loop',
-    perPage: 3,
-    breakpoints: {
-      '1040': {
-        perPage: 2
-      },
-      '660': {
-        perPage: 1
-      }
+var element = document.getElementById('image-slider');
+
+if (typeof element != 'undefined' && element != null) // checking if we are on "works" page, if not, do not do anything
+  {
+    document.addEventListener('DOMContentLoaded', function () {
+      var secondarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#secondary-slider', {
+        fixedWidth: 100,
+        height: 60,
+        gap: 10,
+        cover: true,
+        isNavigation: true,
+        focus: 'center',
+        type: 'loop',
+        perPage: 3
+      }).mount();
+      var primarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#image-slider', {
+        pagination: false,
+        arrows: false,
+        cover: true,
+        focus: 'center',
+        type: 'loop',
+        perPage: 3,
+        breakpoints: {
+          '1040': {
+            perPage: 2
+          },
+          '660': {
+            perPage: 1
+          }
+        }
+      });
+      primarySlider.sync(secondarySlider).mount(); // syncinc the two sliders to make them work together
+    }); // make cards clickable
+
+    var cards = document.getElementsByClassName('work-card').length;
+
+    var _loop = function _loop(ey) {
+      var thiss = document.getElementsByClassName('work-card')[ey];
+      thiss.addEventListener('click', function () {
+        window.location = thiss.getAttribute("href");
+      });
+    };
+
+    for (var ey = 0; ey < cards; ey++) {
+      _loop(ey);
     }
-  });
-  primarySlider.sync(secondarySlider).mount();
-}); // make cards clickable
-
-var cards = document.getElementsByClassName('work-card').length;
-
-var _loop = function _loop(ey) {
-  var thiss = document.getElementsByClassName('work-card')[ey];
-  thiss.addEventListener('click', function () {
-    window.location = thiss.getAttribute("href");
-  });
-};
-
-for (var ey = 0; ey < cards; ey++) {
-  _loop(ey);
-}
+  }
 
 /***/ }),
 

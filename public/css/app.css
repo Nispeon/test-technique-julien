@@ -8,6 +8,9 @@ a {
     text-decoration: none;
 }
 
+body {
+    background-color: #6497b1;
+}
 /* General classes for everywhere use */
 
 .n-flex {
@@ -53,6 +56,7 @@ a {
 .main-header {
     min-height: 10vH;
     background-color: #03396c;
+    z-index: 10;
 }
 
 
@@ -94,7 +98,8 @@ a {
 
     .nav-2.responsive {
         position: absolute;
-        display: block;
+        display: none;
+        transition: .5s;
         background-color: #03396c;
         z-index: 15;
     }
@@ -128,7 +133,7 @@ a {
 /* Footer */
 
 .main-footer {
-    height: 10vH;
+    min-height: 10vH;
     background-color: #03396c;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
@@ -208,13 +213,13 @@ a {
     top: -1vH;
 } */
 
+#image-slider {
+    width: 100%;
+}
+
 #image-slider .is-visible:hover {
     position: relative;
     top: -1vH;
-}
-
-#image-slider {
-    width: 100%;
 }
 
 #secondary-slider {
@@ -230,10 +235,7 @@ a {
 /* single work page */
 
 .work-tn {
-    background-size: contain;
-    background-position: center;
     min-height: 50vH;
-    background-repeat: no-repeat;
     margin: 3vH 0;
 }
 
@@ -241,7 +243,42 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
 }
+
+.work-article h1 {
+    font-size: 2em;
+}
+
+.work-article > * {
+    margin: 2vH 0;
+}
+
+.work-article hr {
+    width: 100%;
+}
+
+.work-article p {
+    font-size: 1.2em;
+}
+
+.single-main {
+    min-height: 80vH;
+    background-color: #6497b1;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5vH 10%;
+}
+
+.single-tn {
+    z-index: 5;
+}
+
+.single-main .work-tn .slider-back {
+    transform: scale(1.1);
+    z-index: 0;
+}
+
 
 
 @media screen and (max-width: 865px) {
