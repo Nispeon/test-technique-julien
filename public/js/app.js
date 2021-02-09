@@ -7760,13 +7760,53 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splide', {
-  type: 'loop',
-  perPage: 1,
-  autoplay: true,
-  width: '100vw',
-  height: '30vh'
-}).mount();
+var element = document.getElementById('splide');
+
+if (typeof element != 'undefined' && element != null) {
+  new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splide', {
+    type: 'loop',
+    perPage: 1,
+    autoplay: true,
+    width: '100vw',
+    height: '30vh'
+  }).mount();
+} //works sliders
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var secondarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#secondary-slider', {
+    fixedWidth: 100,
+    height: 60,
+    gap: 10,
+    cover: true,
+    isNavigation: true,
+    focus: 'center',
+    type: 'loop',
+    perPage: 3,
+    breakpoints: {
+      '600': {// fixedWidth: 66,
+        // height    : 40,
+      }
+    }
+  }).mount();
+  var primarySlider = new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#image-slider', {
+    pagination: false,
+    arrows: false,
+    cover: true,
+    focus: 'center',
+    type: 'loop',
+    perPage: 3,
+    breakpoints: {
+      '865': {
+        perPage: 2
+      },
+      '600': {
+        perPage: 1
+      }
+    }
+  });
+  primarySlider.sync(secondarySlider).mount();
+});
 
 /***/ }),
 

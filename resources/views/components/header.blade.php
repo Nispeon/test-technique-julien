@@ -2,7 +2,7 @@
     <nav class="main-nav n-flex n-center n-between w100">
         <div class="n-flex n-center n-even">
             <a href="{{url('/')}}">Accueil</a>
-            <a href="{{url('/')}}">Œuvres</a>
+            <a href="{{route('works.index')}}">Œuvres</a>
             <a href="{{url('/about')}}">Biography</a>
         </div>
         <div class="nav-icons n-flex">
@@ -12,9 +12,9 @@
                 <a href="/disconnect">Déconnexion</a>
             @else
                 <a href="{{ route('user.create') }}">S'inscrire</a>
-                <a>Se connecter</a>
+                <a href="/login" >Se connecter</a>
             @endif
         </div>
-        
+
     </nav>
 </header>
