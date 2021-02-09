@@ -7759,6 +7759,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+ // let width = window.innerWidth;
+// width.addEventListener('change', responav);
+// function responav(){
+//     var nav = document.getElementById('resp');
+//     if(width < 700) {
+//         console.log('ww');
+//         nav.className= "nav-2 w100 n-flex n-center n-between responsive";
+//     } else {
+//         nav.className= "nav-2 w100 n-flex n-center n-between";
+//     }
+// }
+// responav;
 
 var element = document.getElementById('splide');
 

@@ -2,6 +2,26 @@ require('./bootstrap');
 
 import Splide from '@splidejs/splide';
 
+
+// let width = window.innerWidth;
+
+// width.addEventListener('change', responav);
+
+// function responav(){
+
+//     var nav = document.getElementById('resp');
+
+//     if(width < 700) {
+//         console.log('ww');
+//         nav.className= "nav-2 w100 n-flex n-center n-between responsive";
+//     } else {
+//         nav.className= "nav-2 w100 n-flex n-center n-between";
+//     }
+
+// }
+
+// responav;
+
 var element =  document.getElementById('splide');
 if (typeof(element) != 'undefined' && element != null)
 {
@@ -67,3 +87,4 @@ for(let ey = 0; ey < cards; ey++ ) {
         window.location = thiss.getAttribute("href");
     });
 }
+

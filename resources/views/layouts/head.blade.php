@@ -15,4 +15,6 @@
         {{-- Scripts --}}
         <script src="https://kit.fontawesome.com/79d4761c9b.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <script src="https://kit.fontawesome.com/79d4761c9b.js" crossorigin="anonymous"></script>
+
     </head>
