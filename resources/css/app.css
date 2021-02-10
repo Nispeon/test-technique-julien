@@ -243,7 +243,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
 }
 
 .work-article h1 {
@@ -266,8 +265,14 @@ body {
     min-height: 80vH;
     background-color: #6497b1;
     color: #ffffff;
+    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
+
     font-family: 'Montserrat', sans-serif;
     padding: 5vH 10%;
+}
+
+.single-main h1 {
+    font-size: 2.5em;
 }
 
 .single-tn {
@@ -279,7 +284,42 @@ body {
     z-index: 0;
 }
 
+.comtit {
+    margin: 3vH 0;
+    font-size: 1.7em;
+}
 
+.single-comments {
+    flex-direction: column;
+}
+
+.single-comments input, .single-comments input::placeholder {
+    width: 80%;
+    min-height: 10vH;
+    background-color: #6497b1;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.single-comments input:focus {
+    outline: none;
+}
+
+.single-comments button, .single-comments button:hover {
+    width: 20%;
+    background-color: #03396c7c;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 1vH;
+}
+
+.single-comments button:focus {
+    background-color: #03396ca6;
+    margin: 1.5vH 0 0 1.5vH;
+}
 
 @media screen and (max-width: 865px) {
     #secondary-slider {

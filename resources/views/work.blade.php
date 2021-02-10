@@ -15,10 +15,14 @@
             <span>{{$tit->release_date}}</span>
         </section>
 
+        <hr>
+        <h2 class="align-center comtit">Commentaires</h2>
+        <hr>
+
         <section class="single-comments n-flex">
-            <form action="" method="post">
+            <form class="n-flex" action="" method="post">
                 @csrf
-                <input type="text" name="comment" placeholder="Écrivez un commentaire ..." required>
+                <input type="text" name="comment" placeholder="Écrivez un commentaire ..." autocomplete="off" required>
                 <button type="submit">Envoyer</button>
             </form>
             <div>
