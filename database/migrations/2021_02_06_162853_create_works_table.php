@@ -17,10 +17,7 @@ class CreateWorksTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('thumbnail');
-            $table->string('slider1')->nullable();
-            $table->string('slider2')->nullable();
-            $table->string('slider3')->nullable();
-            $table->string('slider4')->nullable();
+            $table->text('synopsis');
             $table->text('description');
             $table->date('release_date');
             $table->timestamps();

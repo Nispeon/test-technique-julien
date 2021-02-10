@@ -1,0 +1,37 @@
+{
+    "IronMan" : {
+        "title" : "Iron Man",
+        "synposis" : "Tony Stark, playboy, milliardaire, n'est pas seulement l'héritier des usines d'armement de son père (Stark Industries), c'est également un inventeur de génie. Alors qu'il est en déplacement en Afghanistan afin de présenter sa dernière création, le missile Jéricho, il est enlevé par des terroristes de l'organisation « Les Dix Anneaux ». Gravement blessé lors de l'attaque, il ne survit que grâce à l'aide d'un scientifique, le professeur Yinsen, qui lui greffe à la poitrine un électro-aimant alimenté par une batterie de voiture afin d’empêcher des éclats d’obus d’atteindre son cœur.",
+        "description" : "Iron Man est un film américain réalisé par Jon Favreau, sorti en 2008. Il raconte les origines et les débuts du personnage éponyme issu du comics publié par Marvel. Il s'agit de la première étape de l'univers cinématographique Marvel, dont la première partie, appelée « Phase un » s'est terminée en 2012 avec Avengers de Joss Whedon.",
+        "release_date" : "2008-04-30"
+    },
+
+    "IronMan2" : {
+        "title" : "Iron Man 2",
+        "synposis" : "Au moment où Tony Stark révèle au monde qu'il est Iron Man, à Moscou, Anton Vanko meurt dans la misère. Son fils Ivan décide alors de se venger de la famille Stark et jure de faire tomber Tony aussi bas que sa propre famille est tombée à cause d'Howard Stark. En effet, Ivan tombe sur les plans du réacteur ARK (dont la réplique miniature occupe actuellement le torse de Tony) avec les noms d'Anton Vanko et d'Howard Stark inscrits en dessous. Anton était un physicien soviétique qui passa à l'Ouest en 1963 et devint un associé d'Howard. Ensemble, ils inventèrent le réacteur ARK, mais Anton fut accusé d'espionnage et expulsé des États-Unis en 1967. Grâce à ces plans, Ivan construit à son tour un réacteur miniature.",
+        "description" : "Iron Man 2 est un film américain réalisé par Jon Favreau, sorti en 2010. C'est la suite d'Iron Man (2008) du même réalisateur et précède Iron Man 3 (2013). Il s'agit du 3e film de l'univers cinématographique Marvel et fait partie de la phase I.",
+        "release_date" : "2010-04-28"
+    },
+
+    "Thor" : {
+        "title" : "Thor",
+        "synposis" : "En 965, les Géants des Glaces et leur roi Laufey lancèrent une invasion de la Terre à Tønsberg en Norvège. Ils menacèrent de plonger la Terre dans une nouvelle ère glaciaire grâce au Coffre des Anciens Hivers, la source de leur pouvoir. Mais Odin, roi d'Asgard, arriva avec son armée pour les combattre. Durant la bataille, Laufey éborgna l’œil droit d'Odin. L'armée d'Asgard repoussa les Géants des Glaces jusqu'à leur monde : Jötunheim. Les pertes furent lourdes, mais Odin parvint à battre Laufey et s'empara du coffre. Au terme de cette dernière grande guerre, Odin et son armée retournèrent à Asgard. Aux yeux des hommes, tous ces êtres venus d'ailleurs devinrent des mythes et légendes.",
+        "description" : "Thor est un film américain de super-héros réalisé par Kenneth Branagh, sorti en 2011. Il fait partie de l'univers cinématographique Marvel (dans la phase I et en tant que 4e étape) et met en scène les personnages des séries de bandes dessinées Marvel intitulées Journey into Mystery et The Mighty Thor, créées par Stan Lee, Larry Lieber et Jack Kirby.",
+        "release_date" : "2011-04-27"
+    },
+
+    "Cpt America 1" : {
+        "title" : "Captain America: First Avenger",
+        "synposis" : "De nos jours, une équipe découvre dans l'Arctique l'épave d'un avion. À l'intérieur, elle trouve un objet circulaire avec un motif rouge, blanc et bleu. En mars 1942, Johann Schmidt, chef d'HYDRA, l'unité scientifique secrète du Troisième Reich, envahit avec ses troupes la ville de Tønsberg en Norvège pour s'emparer du Tesseract (le Cube cosmique), qui était le joyau le plus précieux du trésor d'Odin.",
+        "description" : "Captain America: First Avenger ou Capitaine America : Le Premier Vengeur au Québec (Captain America: The First Avenger) est un film de super-héros américain réalisé par Joe Johnston, sorti en 2011. Il s'agit du 5e film de l'univers cinématographique Marvel et il fait partie de la phase I.",
+        "release_date" : "2011-07-22"
+    },
+
+    "Avengers" : {
+        "title" : "Avengers",
+        "synposis" : "Un an après avoir été exilé d'Asgard, Loki, le frère de Thor, s’allie avec « l'Autre », le chef d'une race extra-terrestre : les Chitauris. L'Autre souhaite s'emparer du Tesseract, qui est actuellement sur la Terre. Avec l'aide de l'armée des Chitauris, Loki pourra prendre le contrôle de cette planète en échange du Tesseract. Loki se voit confier un sceptre qui l'aidera dans sa mission.",
+        "description" : "Avengers ou Les Avengers : Le film au Québec et au Nouveau-Brunswick (Marvel's The Avengers) est un film de super-héros américain écrit et réalisé par Joss Whedon, sorti en 2012. Il se base sur l'équipe de super-héros du même nom (Les Vengeurs en français) apparaissant dans le comic book publié par Marvel Comics. Sixième film de l'univers cinématographique Marvel, il clôt la phase I.",
+        "release_date" : "2012-04-25"
+    }
+
+}

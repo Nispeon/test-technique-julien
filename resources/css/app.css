@@ -11,6 +11,10 @@ a {
 body {
     background-color: #6497b1;
 }
+
+main {
+    min-height: 80vH;
+}
 /* General classes for everywhere use */
 
 .n-flex {

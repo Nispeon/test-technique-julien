@@ -20,8 +20,9 @@
         <hr>
 
         <section class="single-comments n-flex">
-            <form class="n-flex" action="" method="post">
+            <form class="n-flex" action="{{route('comment.store')}}" method="post">
                 @csrf
+                <input type="hidden" name="postId" value="{{$tit->id}}">
                 <input type="text" name="comment" placeholder="Écrivez un commentaire ..." autocomplete="off" required>
                 <button type="submit">Envoyer</button>
             </form>

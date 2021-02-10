@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorksController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +41,8 @@ Route::get('/login', [UserController::class, 'connect']);
 Route::post('/testco', [UserController::class, 'login']);
 
 Route::resource('works', WorksController::class);
+
+Route::resource('comment', CommentsController::class);
 
 Route::get('/disconnect', function() {
     Auth::logout();

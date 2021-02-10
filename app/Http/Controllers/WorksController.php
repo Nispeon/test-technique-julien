@@ -33,7 +33,7 @@ class WorksController extends Controller
 
         $request->thumbnail->move(public_path('storage/thumbnails'), $request->thumbnail->getClientOriginalName());
 
-        return redirect('/');
+        return redirect()->route('home');
     }
 
     public function update($id)
