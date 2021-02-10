@@ -52,10 +52,20 @@ class UserController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
+
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+            $user = User::where('email', $request->email)->first();
+
+                session([
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'online' => 1,
+                ]);
 
             return redirect()->route('home');
+        } else {
+            echo '<script>alert("Mauvaise combinaison pseudo / mot de passe")</script>';
         }
 
         return back()->withErrors([
@@ -81,14 +91,23 @@ class UserController extends Controller
                 return view('user-create');
             }
             else {
-                $user = User::create($req->all());
 
-                $_SESSION['id'] = $user->id;
-                $_SESSION['name'] = $req->name;
-                $_SESSION['email'] = $req->email;
-                $_SESSION['online'] = 1;
+                DB::table('users')->insert([
+                    'name'      => $req->name,
+                    'email'     => $req->email,
+                    'password'  => Hash::make($req->password),
+                ]);
 
-                return view('welcome');
+                $user = User::where('email', $req->email)->first();
+
+                session([
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'online' => 1,
+                ]);
+
+                return redirect()->route('home');
             }
         } else {
             echo '<script>alert("Les deux mots de passes ne correspondent pas")</script>';
@@ -100,11 +119,19 @@ class UserController extends Controller
     public function update($id, UpdateUserRequest $req)
     {
         $user = User::findOrFail($id);
-        $user->update($req->all());
 
-        $_SESSION['name'] = $req->upname;
+        $user->fill([
+            'name' => $req->upname,
+            'password' => Hash::make($req->newpass),
+        ]);
 
-        return redirect('/');
+        // dd($user);
+
+        $user->save();
+        // $user->update($req->all());
+        session(['name' => $req->upname]);
+
+        return redirect()->route('home');
     }
 
     public function destroy($id)
@@ -115,6 +142,6 @@ class UserController extends Controller
     public function disconnect()
     {
         session_destroy();
-        return view('welcome');
+        return redirect()->route('home');
     }
 }

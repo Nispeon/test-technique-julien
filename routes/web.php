@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorksController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,7 @@ Route::post('/testco', [UserController::class, 'login']);
 Route::resource('works', WorksController::class);
 
 Route::get('/disconnect', function() {
-    session_destroy();
-    return redirect('/');
+    Auth::logout();
+    session()->invalidate();
+    return redirect()->route('home');
 });

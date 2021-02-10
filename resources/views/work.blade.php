@@ -14,6 +14,23 @@
             <p class="align-justify">{{$tit->synopsis}}</p>
             <span>{{$tit->release_date}}</span>
         </section>
+
+        <section class="single-comments n-flex">
+            <form action="" method="post">
+                @csrf
+                <input type="text" name="comment" placeholder="Écrivez un commentaire ..." required>
+                <button type="submit">Envoyer</button>
+            </form>
+            <div>
+                <div>
+                    <h3>Pseudo</h3>
+                    <p>Posté le xxxx-xx-xx</p>
+                </div>
+                <p>Commentaire donc la je fais du long lorem sans raison je pense que la limite de caract-ère ne sera pas tres elevé, en soit je sais pas parce que les critiques de films peuvent etres assez longues quand même</p>
+            </div>
+
+        </section>
+
     </main>
 
 

@@ -12,8 +12,10 @@
             </div>
             <div id="nav-cont-2" class="nav-icons n-flex">
 
-                @if(isset($_SESSION['online']))
-                <a href="{{ route('user.edit', $_SESSION["id"] ) }}"><i class="fas fa-user"></i></a>
+
+
+                @if(session()->has('id'))
+                <a href="{{ route('user.edit', session()->get('id') ) }}">Profil  <i class="fas fa-user"></i></a>
                 <a href="/disconnect">Déconnexion</a>
                 @else
                 <a href="{{ route('user.create') }}">S'inscrire</a>

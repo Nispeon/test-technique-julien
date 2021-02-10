@@ -2,13 +2,12 @@
     <body>
 
         <x-header/>
-
-        <form action="{{route('user.update', $_SESSION['id'])}}" method="post">
+        <form action="{{route('user.update', session()->get('id'))}}" method="post">
             @csrf
             @method('PATCH')
 
             <label for="update">Changer votre pseudo ?</label>
-            <input type="text" name="upname" placeholder="Nouveau pseudo..." value="{{$_SESSION['name']}}">
+            <input type="text" name="upname" placeholder="Nouveau pseudo..." value="{{session()->get('name')}}">
 
             <label for="newpass">Changer de mot de passe ? </label>
             <input type="password" name="newpass" placeholder="Nouveau mot de passe..." autocomplete="off">
