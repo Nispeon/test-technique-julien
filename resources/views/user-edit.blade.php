@@ -2,22 +2,28 @@
     <body>
 
         <x-header/>
-        <form action="{{route('user.update', session()->get('id'))}}" method="post">
-            @csrf
-            @method('PATCH')
 
-            <label for="update">Changer votre pseudo ?</label>
-            <input type="text" name="upname" placeholder="Nouveau pseudo..." value="{{session()->get('name')}}">
+        <main class="main-edit n-flex n-center n-column">
 
-            <label for="newpass">Changer de mot de passe ? </label>
-            <input type="password" name="newpass" placeholder="Nouveau mot de passe..." autocomplete="off">
+            <h1>{{session()->get('name')}}</h1>
+            <form class="u-edit n-flex n-column" action="{{route('user.update', session()->get('id'))}}" method="post">
+                @csrf
+                @method('PATCH')
 
-            <label for="oldpass">Entrez votre ancien mot de passe pour confirmer</label>
-            <input type="password" name="oldpass" placeholder="Mot de passe actuel..." required>
+                <label for="update">Changer votre pseudo ?</label>
+                <input type="text" name="upname" placeholder="Nouveau pseudo..." value="{{session()->get('name')}}">
 
-            <button type="submit">Enregistrer les modifications</button>
+                <label for="newpass">Changer de mot de passe ? </label>
+                <input type="password" name="newpass" placeholder="Nouveau mot de passe..." autocomplete="off">
 
-        </form>
+                <label for="oldpass">Entrez votre ancien mot de passe pour confirmer</label>
+                <input type="password" name="password" placeholder="Mot de passe actuel..." required>
+
+                <button type="submit">Enregistrer les modifications</button>
+
+            </form>
+
+        </main>
 
         <x-footer/>
 

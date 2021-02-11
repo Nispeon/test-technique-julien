@@ -21,6 +21,10 @@ main {
     display: flex;
 }
 
+.n-column {
+    flex-direction: column;
+}
+
 .n-center {
     align-items: center;
     justify-content: center;
@@ -295,12 +299,15 @@ main {
 
 .single-comments {
     flex-direction: column;
+    width: 90%;
+    background-color: #2868a5b7;
 }
 
 .single-comments input::-moz-placeholder {
     width: 80%;
     min-height: 10vH;
-    background-color: #6497b1;
+    background-color: #2868a5b7;
+    padding-left: 2%;
     border: none;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
@@ -310,7 +317,8 @@ main {
 .single-comments input:-ms-input-placeholder {
     width: 80%;
     min-height: 10vH;
-    background-color: #6497b1;
+    background-color: #2868a5b7;
+    padding-left: 2%;
     border: none;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
@@ -320,7 +328,8 @@ main {
 .single-comments input, .single-comments input::placeholder {
     width: 80%;
     min-height: 10vH;
-    background-color: #6497b1;
+    background-color: #2868a5b7;
+    padding-left: 2%;
     border: none;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
@@ -342,7 +351,33 @@ main {
 
 .single-comments button:focus {
     background-color: #03396ca6;
-    margin: 1.5vH 0 0 1.5vH;
+    width: 19%;
+}
+
+.comment {
+    padding: 2vH;
+    border-bottom: 1px #ffffff solid;
+}
+
+.comment p {
+    margin-left: 1%;
+}
+
+.com.n-flex {
+    margin-bottom: 1vH;
+}
+
+.main-edit {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.u-edit {
+    width: 50%;
+}
+
+.u-edit > * {
+    margin: 1vH 0;
 }
 
 @media screen and (max-width: 865px) {

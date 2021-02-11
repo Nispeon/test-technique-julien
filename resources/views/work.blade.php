@@ -28,10 +28,10 @@
             </form>
 
             @foreach($coms as $com)
-            <div>
-                <div>
+            <div class="comment">
+                <div class="n-flex com">
                     <h3>{{$com->name}}</h3>
-                    <p>le {{$com->posted_at}}</p>
+                    <p class="n-flex n-center">le {{$com->posted_at}}</p>
                 </div>
                 <p>{{$com->content}}</p>
             </div>

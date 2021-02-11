@@ -117,21 +117,45 @@ class UserController extends Controller
     }
 
     public function update($id, UpdateUserRequest $req)
+
     {
-        $user = User::findOrFail($id);
 
-        $user->fill([
-            'name' => $req->upname,
-            'password' => Hash::make($req->newpass),
-        ]);
+        $credentials = [
+            'password'  => $req->password,
+            'name'      => session()->get('name')
+        ];
 
-        // dd($user);
+        // dd($credentials);
 
-        $user->save();
-        // $user->update($req->all());
-        session(['name' => $req->upname]);
 
-        return redirect()->route('home');
+        if (Auth::attempt($credentials)) {
+            $user = User::findOrFail($id);
+
+            $user->fill([
+                'name' => $req->upname,
+                'password' => Hash::make($req->newpass),
+            ]);
+
+            $tryName = User::where('name', $req->upname)->where('id','!=',session()->get('id'))->get();
+
+            if($tryName->isEmpty()) {
+                $user->save();
+                session(['name' => $req->upname]);
+
+                return redirect()->route('home');
+            } else {
+                echo "<script>alert('Pseudo déjà prit')</script>";
+                return view('user-edit');
+            }
+        } else {
+            echo "<script>alert('Mauvais mot de passe')</script>";
+            return view('user-edit');
+        }
+
+
+
+
+
     }
 
     public function destroy($id)
