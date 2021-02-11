@@ -18,7 +18,8 @@ class WorksController extends Controller
     public function show($id)
     {
         $title = DB::table('works')->where('id', $id)->get();
-        return view('work', compact('title'));
+        $coms = DB::table('comments')->where('posts_id', $id)->join('users', 'users.id', '=', 'comments.users_id')->get();
+        return view('work', compact('title', 'coms'));
     }
 
     public function store(Request $request)

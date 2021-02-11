@@ -18,6 +18,7 @@ class CommentsController extends Controller
             'users_id'   => session()->get('id'),
             'content'   => $request->comment,
             'posts_id'   => $request->postId,
+            "posted_at" =>  date('Y-m-d'),
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
@@ -25,10 +26,4 @@ class CommentsController extends Controller
         return redirect()->route('works.show', $request->postId);
     }
 
-    public function show($workid)
-    {
-        $coms = DB::table('comments')->get();
-
-        dd($coms);
-    }
 }

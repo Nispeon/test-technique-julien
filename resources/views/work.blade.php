@@ -26,13 +26,16 @@
                 <input type="text" name="comment" placeholder="Écrivez un commentaire ..." autocomplete="off" required>
                 <button type="submit">Envoyer</button>
             </form>
+
+            @foreach($coms as $com)
             <div>
                 <div>
-                    <h3>Pseudo</h3>
-                    <p>Posté le xxxx-xx-xx</p>
+                    <h3>{{$com->name}}</h3>
+                    <p>le {{$com->posted_at}}</p>
                 </div>
-                <p>Commentaire donc la je fais du long lorem sans raison je pense que la limite de caract-ère ne sera pas tres elevé, en soit je sais pas parce que les critiques de films peuvent etres assez longues quand même</p>
+                <p>{{$com->content}}</p>
             </div>
+            @endforeach
 
         </section>
 
