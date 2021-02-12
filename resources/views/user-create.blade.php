@@ -25,7 +25,7 @@
             <input type="text" name="name" placeholder="Pseudo..." @if(isset($_POST['name'])) value="{{$_POST['name']}}" @endif required>
 
             <label for="email">Entrez votre email</label>
-            <input type="mail" name="email" placeholder="Email..." @if(isset($_POST['email']))value="{{$_POST['email']}}" @endif required>
+            <input type="email" name="email" placeholder="Email..." @if(isset($_POST['email']))value="{{$_POST['email']}}" @endif required>
 
             <label for="password">Choisissez un mot de passe</label>
             <input type="password" name="password" placeholder="Mot de passe..." required>
@@ -37,6 +37,6 @@
         </form>
 
         <x-footer/>
-        
+
     </body>
 </html>

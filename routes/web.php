@@ -30,9 +30,7 @@ Route::get('/oeuvres', function () {
     return view('works');
 });
 
-Route::get('/test', function () {
-    return view('admin-board');
-});
+Route::get('/admin', [WorksController::class, 'edit'])->middleware('admin')->name('admin');
 
 Route::resource('user', UserController::class);
 
@@ -49,3 +47,6 @@ Route::get('/disconnect', function() {
     session()->invalidate();
     return redirect()->route('home');
 });
+
+
+

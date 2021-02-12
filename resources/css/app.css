@@ -358,6 +358,38 @@ main {
     margin: 1vH 0;
 }
 
+.m404 > *{
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin-main textarea {
+    width: 90%;
+    min-height: 15vH;
+    outline: none;
+}
+
+.admin-main textarea::placeholder {
+    padding: 1vh 1%;
+}
+
+.upwork {
+    display: none;
+}
+
+.admin-sec {
+    width: 33%;
+}
+
+.admin-form {
+    width: 80%;
+}
+
+.admin-form > * {
+    margin: 2vH 0;
+}
+
+
 @media screen and (max-width: 865px) {
     #secondary-slider {
         width: 80%;
@@ -369,6 +401,16 @@ main {
 
     .nav-2.n-between {
         justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .admin-main {
+        flex-direction: column;
+    }
+
+    .admin-sec {
+        width: 90%;
     }
 }
 

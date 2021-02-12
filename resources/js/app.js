@@ -119,3 +119,26 @@ if (typeof(element) != 'undefined' && element != null) // checking if we are on 
 
 }
 
+//display forms on admin page
+var element =  document.getElementById('workid');
+if (typeof(element) != 'undefined' && element != null) // checking if we are on admin page, if not, do not do anything
+{
+    let options = document.querySelectorAll('option');
+
+    let select = document.querySelector('select');
+
+    let forms = document.getElementsByClassName('upwork');
+
+    select.onchange = function() {
+        var index = this.selectedIndex;
+        var nb = this.children[index].getAttribute('nb');
+
+        for(let i = 0; i < forms.length; i++)
+        {
+            forms[i].style.display = 'none';
+        }
+
+        forms[nb--].style.display = 'flex';
+    }
+
+}

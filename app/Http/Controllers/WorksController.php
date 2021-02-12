@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateWorkRequest;
 use Illuminate\Http\Request;
 use App\Models\Work;
 use Illuminate\Support\Facades\DB;
@@ -34,16 +35,43 @@ class WorksController extends Controller
 
         $request->thumbnail->move(public_path('storage/thumbnails'), $request->thumbnail->getClientOriginalName());
 
-        return redirect()->route('home');
+        return redirect()->route('admin');
     }
 
-    public function update($id)
+    public function edit()
     {
+        $titles = DB::table('works')->get();
+        return view('admin-board', compact('titles'));
+    }
 
+    public function update($id, UpdateWorkRequest $req)
+    {
+        $work = Work::findOrFail($id);
+
+            $work->fill([
+                'title' => $req->newtitle,
+                // 'thumbnail' => $req->newthumbnail->getClientOriginalName(),
+                'description' => $req->newdescription,
+                'synopsis' => $req->newsynopsis,
+                'release_date' => $req->newrelease_date
+            ]);
+
+            $tries = Work::where('title', $req->newtitle)->where('id','!=',$id)->get();
+
+            if($tries->isEmpty()) {
+                $work->save();
+                echo "<script>alert('mise à jour effectuée avec succès !')</script>";
+                return redirect()->route('admin');
+            } else {
+                echo "<script>alert('Ce nom d'oeuvre existe déjà !')</script>";
+                return redirect()->route('admin');
+            }
     }
 
     public function destroy($id)
     {
+        $mort = Work::where('id', $id)->delete();
+        return redirect()->route('admin');
 
     }
 }
