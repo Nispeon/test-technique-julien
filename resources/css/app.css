@@ -122,9 +122,50 @@ main {
 
 /* Landing page */
 
+
+.main-section {
+    cursor: pointer;
+    position: relative;
+    border: 5px solid #ffffff;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7em;
+}
+
+.main-bg {
+    width: 100%;
+    height: 100%;
+    filter: blur(16px);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.main-bg:hover {
+    background-position-x: 5vW;
+}
+
+.main-section h1 {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    transition: 0.5s;
+    filter: blur(0px);
+}
+
+.main-section h1:hover {
+    padding-left: 5%;
+}
+
 .main-banner {
     background-color: #b3cde0;
     height: 50vH;
+    padding: 5%;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    color: #ffffff;
+    text-shadow: rgba(0, 0, 0, 0.459) 3px 3px;
 }
 
 .main-works {
@@ -146,7 +187,6 @@ main {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
-
 }
 
 
@@ -424,4 +464,9 @@ main {
     #secondary-slider {
         width: 90%;
     }
+
+    .main-section h1, .main-banner h1 {
+        font-size: 0.7em;
+    }
+
 }

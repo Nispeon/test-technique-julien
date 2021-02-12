@@ -7794,10 +7794,24 @@ function navshow() {
 }
 
 burger.addEventListener('click', navshow); // attributing even to burger menu icon
-// SLIDERS
+//landing page making sections clickable
+
+var cards = document.getElementsByClassName('main-section').length;
+
+var _loop = function _loop(ey) {
+  var thiss = document.getElementsByClassName('main-section')[ey];
+  thiss.addEventListener('click', function () {
+    window.location = thiss.getAttribute("href");
+  });
+};
+
+for (var ey = 0; ey < cards; ey++) {
+  _loop(ey);
+} // SLIDERS
 
 /* These sliders were made using Splide library, chck their website for more info */
 // about page slider
+
 
 var element = document.getElementById('splide');
 
@@ -7847,17 +7861,18 @@ if (typeof element != 'undefined' && element != null) // checking if we are on "
       primarySlider.sync(secondarySlider).mount(); // syncinc the two sliders to make them work together
     }); // make cards clickable
 
-    var cards = document.getElementsByClassName('work-card').length;
+    var _cards = document.getElementsByClassName('work-card').length;
 
-    var _loop = function _loop(ey) {
-      var thiss = document.getElementsByClassName('work-card')[ey];
+    var _loop2 = function _loop2(_ey) {
+      var thiss = document.getElementsByClassName('work-card')[_ey];
+
       thiss.addEventListener('click', function () {
         window.location = thiss.getAttribute("href");
       });
     };
 
-    for (var ey = 0; ey < cards; ey++) {
-      _loop(ey);
+    for (var _ey = 0; _ey < _cards; _ey++) {
+      _loop2(_ey);
     }
   } //display forms on admin page
 

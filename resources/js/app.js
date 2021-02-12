@@ -43,6 +43,19 @@ function navshow(){ // hides or shows the nav links
 burger.addEventListener('click', navshow); // attributing even to burger menu icon
 
 
+//landing page making sections clickable
+let cards = document.getElementsByClassName('main-section').length;
+
+    for(let ey = 0; ey < cards; ey++ ) {
+
+        let thiss = document.getElementsByClassName('main-section')[ey];
+
+        thiss.addEventListener('click', function() {
+            window.location = thiss.getAttribute("href");
+        });
+    }
+
+
 // SLIDERS
 
 /* These sliders were made using Splide library, chck their website for more info */
