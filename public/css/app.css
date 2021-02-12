@@ -58,6 +58,12 @@ main {
     text-align: justify;
 }
 
+.error {
+    color: #9c0e0e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
 
 /* Header */
 

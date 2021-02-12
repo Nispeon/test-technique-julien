@@ -34,7 +34,7 @@ Route::get('/admin', [WorksController::class, 'edit'])->middleware('admin')->nam
 
 Route::resource('user', UserController::class);
 
-Route::get('/login', [UserController::class, 'connect']);
+Route::get('/login', [UserController::class, 'connect'])->name('login');
 
 Route::post('/testco', [UserController::class, 'login']);
 

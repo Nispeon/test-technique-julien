@@ -11,13 +11,13 @@
                 @method('PATCH')
 
                 <label for="update">Changer votre pseudo ?</label>
-                <input type="text" name="upname" placeholder="Nouveau pseudo..." value="{{session()->get('name')}}">
+                <input type="text" id="update" name="upname" placeholder="Nouveau pseudo..." value="{{session()->get('name')}}">
 
                 <label for="newpass">Changer de mot de passe ? </label>
-                <input type="password" name="newpass" placeholder="Nouveau mot de passe..." autocomplete="off">
+                <input type="password" id="newpass" name="newpass" placeholder="Nouveau mot de passe..." autocomplete="off">
 
                 <label for="oldpass">Entrez votre ancien mot de passe pour confirmer</label>
-                <input type="password" name="password" placeholder="Mot de passe actuel..." required>
+                <input type="password" id="oldpass" name="password" placeholder="Mot de passe actuel..." required>
 
                 <button type="submit">Enregistrer les modifications</button>
 

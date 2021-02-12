@@ -6,6 +6,12 @@
 
     <main class="admin-main n-flex n-center">
         <section class="n-flex n-column n-center admin-sec">
+
+            @if($errors->any())
+            @foreach($errors->all() as $error)
+            <h2 class="error">{{$error}}</h2>
+            @endforeach
+            @endif
             <form class="admin-form n-flex n-column n-center" method="post" action="{{route('works.store')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" name="title" placeholder="Titre de l'oeuvre">

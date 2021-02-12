@@ -31,7 +31,7 @@ class UserController extends Controller
 
     public function create()
     {
-        if(isset($_SESSION['online'])) {
+        if(session()->get('online') != "") {
             return view('welcome');
         } else {
             return view('user-create');
@@ -65,12 +65,11 @@ class UserController extends Controller
 
             return redirect()->route('home');
         } else {
-            echo '<script>alert("Mauvaise combinaison pseudo / mot de passe")</script>';
+            echo '<script>confirm("Mauvaise combinaison pseudo / mot de passe"); window.location.href = "' . route("login") . '";</script>';
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+
+
     }
 
     public function store(StoreUserRequest $req)
@@ -78,7 +77,10 @@ class UserController extends Controller
 
         if ($req->password == $req->password_verif) {
 
-            // $req->password = Hash::make($req->password);
+            $validated = $req->validate([
+                'name' => 'required|unique:users|min:5',
+                'email' => 'required|unique:users|',
+            ]);
 
             $input['email'] = $req->email;
 

@@ -25,6 +25,15 @@ class WorksController extends Controller
 
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'title' => 'required|min:5',
+            'thumbnail' => 'required',
+            'description' => 'required',
+            'synopsis' => 'required',
+            'release_date' => 'required',
+        ]);
+
         DB::table('works')->insert([
             'title' => $request->title,
             'thumbnail' => $request->thumbnail->getClientOriginalName(),
