@@ -10,10 +10,9 @@ use Illuminate\Support\Facades\DB;
 class CommentsController extends Controller
 {
 
+    // Envoyer un commentaire
     public function store(Request $request)
     {
-        // dd($request);
-
         DB::table('comments')->insert([
             'users_id'   => session()->get('id'),
             'content'   => $request->comment,
@@ -22,7 +21,6 @@ class CommentsController extends Controller
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-
         return redirect()->route('works.show', $request->postId);
     }
 
