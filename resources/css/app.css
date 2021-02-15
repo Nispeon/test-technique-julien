@@ -15,7 +15,8 @@ body {
 main {
     min-height: 80vH;
 }
-/* General classes for everywhere use */
+
+/* ---------------- Classes d'utilité générale ---------------- */
 
 .n-flex {
     display: flex;
@@ -65,7 +66,7 @@ main {
 }
 
 
-/* Header */
+/* ---------------- Header ---------------- */
 
 .main-header {
     min-height: 10vH;
@@ -74,7 +75,7 @@ main {
 }
 
 
-.nav-2 > * {
+.nav-2>* {
     margin: 0 5%;
     width: 30%;
 }
@@ -91,17 +92,18 @@ main {
 
 .nav-bars {
     padding-left: 7%;
-    display: none!important;
+    display: none !important;
     color: #ffffff;
 }
 
-#nav-cont-1, #nav-cont-2 {
+#nav-cont-1,
+#nav-cont-2 {
     transition: .5s;
 }
 
 @media screen and (max-width: 700px) {
     .nav-bars {
-        display: flex!important;
+        display: flex !important;
         height: 10vh;
         align-items: center;
     }
@@ -118,7 +120,8 @@ main {
         z-index: 15;
     }
 
-    #nav-cont-1, #nav-cont-2 {
+    #nav-cont-1,
+    #nav-cont-2 {
         width: 100%;
         margin: 3vH 0;
 
@@ -126,7 +129,7 @@ main {
 }
 
 
-/* Landing page */
+/* ---------------- Landing page ---------------- */
 
 
 .main-section {
@@ -175,7 +178,7 @@ main {
 }
 
 .main-works {
-    background-color: 	#6497b1;
+    background-color: #6497b1;
     height: 50vH;
 }
 
@@ -185,7 +188,7 @@ main {
 }
 
 
-/* Footer */
+/* ---------------- Footer ---------------- */
 
 .main-footer {
     min-height: 10vH;
@@ -196,7 +199,7 @@ main {
 }
 
 
-/* About page */
+/* ---------------- Biographie ---------------- */
 
 .about-main {
     background-color: #6497b1;
@@ -210,7 +213,7 @@ main {
     height: 30vH;
 }
 
-.slider-back{
+.slider-back {
     filter: blur(8px);
     position: absolute;
     z-index: -1;
@@ -237,7 +240,7 @@ main {
     text-shadow: rgba(0, 0, 0, 0.459) 1px 1px;
 }
 
-/* works */
+/* ---------------- OEuvres ----------------*/
 
 .works-main {
     min-height: 80vH;
@@ -257,15 +260,10 @@ main {
     width: 80%;
     background-color: #b3cde0be;
     border-radius: 20px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: .5s;
 }
-
-/* .is-active {
-    position: relative;
-    top: -1vH;
-} */
 
 #image-slider {
     width: 100%;
@@ -282,11 +280,11 @@ main {
 }
 
 .splide__pagination {
-    bottom: -2em!important;
+    bottom: -2em !important;
 }
 
 
-/* single work page */
+/* ---------------- Page d'oeuvre unique ---------------- */
 
 .work-tn {
     min-height: 50vH;
@@ -303,7 +301,7 @@ main {
     font-size: 2em;
 }
 
-.work-article > * {
+.work-article>* {
     margin: 2vH 0;
 }
 
@@ -349,7 +347,8 @@ main {
     background-color: #2868a5b7;
 }
 
-.single-comments input, .single-comments input::placeholder {
+.single-comments input,
+.single-comments input::placeholder {
     width: 80%;
     min-height: 10vH;
     background-color: #2868a5b7;
@@ -364,7 +363,8 @@ main {
     outline: none;
 }
 
-.single-comments button, .single-comments button:hover {
+.single-comments button,
+.single-comments button:hover {
     width: 20%;
     background-color: #03396c7c;
     outline: none;
@@ -400,11 +400,11 @@ main {
     width: 50%;
 }
 
-.u-edit > * {
+.u-edit>* {
     margin: 1vH 0;
 }
 
-.m404 > *{
+.m404>* {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
 }
@@ -431,17 +431,18 @@ main {
     width: 80%;
 }
 
-.admin-form > * {
+.admin-form>* {
     margin: 2vH 0;
 }
 
+/* ---------------- Responsive ---------------- */
 
 @media screen and (max-width: 865px) {
     #secondary-slider {
         width: 80%;
     }
 
-    .nav-2 > * {
+    .nav-2>* {
         width: 45%;
     }
 
@@ -471,7 +472,8 @@ main {
         width: 90%;
     }
 
-    .main-section h1, .main-banner h1 {
+    .main-section h1,
+    .main-banner h1 {
         font-size: 0.7em;
     }
 

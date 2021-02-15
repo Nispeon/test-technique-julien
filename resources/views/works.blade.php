@@ -1,3 +1,5 @@
+{{-- Page de listes des oeuvres --}}
+
 @include('layouts/head')
 
 <body>

@@ -1,9 +1,11 @@
+{{-- Page d'accueil --}}
+
 @include('layouts/head')
 
-    <body>
+<body>
 
-        <x-header/>
-        <main>
+    <x-header />
+    <main>
 
         <section class="main-banner w100 n-flex n-center">
             <h1 class="align-center">Louis D'Esposito</h1>
@@ -19,10 +21,11 @@
             <h1>Biographie <i class="fas fa-arrow-right"></i></h1>
         </section>
 
-        </main>
+    </main>
 
 
-        <x-footer/>
+    <x-footer />
 
-    </body>
+</body>
+
 </html>

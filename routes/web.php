@@ -1,5 +1,6 @@
 <?php
 
+// Appelle des class
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorksController;
@@ -18,30 +19,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Route de retour à la hoempage
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// Page de biographie
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/oeuvres', function () {
-    return view('works');
-});
-
+// Page d'admin d'edit des oeuvres
 Route::get('/admin', [WorksController::class, 'edit'])->middleware('admin')->name('admin');
 
+// Liens à toutes les fonctions du UserController
 Route::resource('user', UserController::class);
 
+// Route de page de connexion
 Route::get('/login', [UserController::class, 'connect'])->name('login');
 
+// Route de connexion
 Route::post('/testco', [UserController::class, 'login']);
 
+// Liens à toutes les fonctions du WorksController
 Route::resource('works', WorksController::class);
 
+// Liens à toutes les fonctions du CommentsController
 Route::resource('comment', CommentsController::class);
 
+// Route de déconnexion
 Route::get('/disconnect', function() {
     Auth::logout();
     session()->invalidate();

@@ -1,52 +1,45 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{{-- Page de création de compte --}}
 
-        <title>Créer un compte</title>
+@include('layouts/head')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<body>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{asset('/')}}css/app.css">
+    <x-header />
 
-        {{-- Scripts --}}
-        <script src="https://kit.fontawesome.com/79d4761c9b.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
+    <main class="n-flex n-center n-column">
 
-        <x-header/>
+        {{-- Afficher les erreurs si échec de requetes --}}
+        @if($errors->any())
+        @foreach($errors->all() as $error)
+        <h2 class="error">{{$error}}</h2>
+        @endforeach
+        @endif
 
-        <main class="n-flex n-center n-column">
-
-            @if($errors->any())
-            @foreach($errors->all() as $error)
-            <h2 class="error">{{$error}}</h2>
-            @endforeach
-            @endif
-
-          <form class="n-flex n-column n-center" method="post" action="{{ route('user.store') }}">
+        <form class="n-flex n-column n-center" method="post" action="{{ route('user.store') }}">
             @csrf
 
             <label for="name">Choisissez un pseudo</label>
-            <input type="text" name="name" id="name" placeholder="Pseudo..." @if(isset($_POST['name'])) value="{{$_POST['name']}}" @endif required>
+            <input type="text" name="name" id="name" placeholder="Pseudo..." @if(isset($_POST['name']))
+                value="{{$_POST['name']}}" @endif required>
 
             <label for="email">Entrez votre email</label>
-            <input type="email" name="email" id="email" placeholder="Email..." @if(isset($_POST['email']))value="{{$_POST['email']}}" @endif required>
+            <input type="email" name="email" id="email" placeholder="Email..."
+                @if(isset($_POST['email']))value="{{$_POST['email']}}" @endif required>
 
             <label for="password">Choisissez un mot de passe</label>
             <input type="password" name="password" id="password" placeholder="Mot de passe..." required>
 
             <label for="password_verif">Ré-entrez le même mot de passe</label>
-            <input type="password" name="password_verif" id="password_verif" placeholder="Confimer le mot de passe..." required>
+            <input type="password" name="password_verif" id="password_verif" placeholder="Confimer le mot de passe..."
+                required>
 
             <button type="submit">S'inscrire</button>
         </form>
-        </main>
+    </main>
 
 
-        <x-footer/>
+    <x-footer />
 
-    </body>
+</body>
+
 </html>

@@ -1,4 +1,4 @@
-{{-- Fichier contenant le header à include sur toutes les autres pages --}}
+{{-- Fichier contenant le header à include sur toutes les autres pages avec un <x-header/> --}}
 <header class="main-header w100 n-flex n-center">
     <nav class="main-nav n-flex n-center n-between w100">
         <div class="nav-bars">
@@ -17,7 +17,8 @@
 
                 {{-- Affichage des fonctions utilisateurs, changent si connecté ou pas --}}
                 @if(session()->has('id'))
-                <a href="{{ route('user.edit', session()->get('id') ) }}">{{session()->get('name')}}  <i class="fas fa-user"></i></a>
+                <a href="{{ route('user.edit', session()->get('id') ) }}">{{session()->get('name')}} <i
+                        class="fas fa-user"></i></a>
                 <a href="/disconnect">Déconnexion</a>
                 @else
                 <a href="{{ route('user.create') }}">S'inscrire</a>
