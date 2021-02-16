@@ -39,7 +39,7 @@ __Étape 7 :__ Faîtes un `php artisan migrate`
 ## Utilisation
 
 Pour lancer le serveur faîtes un `php artisan serv` en plus de lancer laragon, et rendez-vous à l'URL donnée. <br>
-Si vous comptez changer le CSS ou le JS, faîtes un `npm run dev` pour sauvegarder les changements, ou alors faîtes tourner un `npm run watch pendant que vous développez`.
+Si vous comptez changer le CSS ou le JS, faîtes un `npm run dev` pour sauvegarder les changements, ou alors faîtes tourner un `npm run watch` pendant que vous développez.
 
 ### Auteur
 
